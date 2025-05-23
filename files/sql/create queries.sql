@@ -1,4 +1,5 @@
 create database student_menthal_health;
+
 use `student_menthal_health`;
 
 create table student (
@@ -7,10 +8,12 @@ create table student (
     gender varchar(10), 
     country varchar(25)
     );
+    
 CREATE TABLE social_media (
 	platform_id INT Primary key not null,
     name varchar(25)
     );
+    
 CREATE TABLE platform_use (
     platform_id INT NOT NULL,
     student_id INT NOT NULL, 
@@ -21,10 +24,12 @@ CREATE TABLE platform_use (
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     FOREIGN KEY (platform_id) REFERENCES social_media(platform_id)
     );
+    
 CREATE TABLE academic_level (
 	level_id INT Primary key not null,
     academic_level varchar(25)
     );
+    
 CREATE TABLE student_academic (
 	student_id INT NOT NULL,
     level_id INT NOT NULL, 
@@ -33,10 +38,12 @@ CREATE TABLE student_academic (
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     FOREIGN KEY (level_id) REFERENCES academic_level(level_id)
     );
+    
 CREATE TABLE marital_status (
 	marital_id INT PRIMARY KEY,
     status_name VARCHAR (25)
     );
+    
 CREATE TABLE marital_student (
 	student_id INT NOT NULL, 
     marital_id INT NOT NULL, 
@@ -46,48 +53,3 @@ CREATE TABLE marital_student (
     FOREIGN KEY (marital_id) REFERENCES marital_status(marital_id)
     );
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-);
-
-create table academic_status ( 
-	student_id INT Primary key not null,
-    academic_level varchar(25),
-    academic_impact VARCHAR(5)
-    );
-    
-create table platfor
-
-create table social_media (
-	student_id INT Primary key not null,
-    platform_id int, 
-    platform VARCHAR(25),
-    avg_use int,
-    FOREIGN KEY(platform_id) References student(platform_id)
-    );
-    
-create table student_heatlh (
-	student_id INT Primary key not null,
-    sleep_hours int,
-    mental_health_score int, 
-    addicted_score int
-    );
-
-create table student_marital ( 
-	student_id INT Primary key not null,
-    conflicts int, 
-    status varchar(25) 
-    );
