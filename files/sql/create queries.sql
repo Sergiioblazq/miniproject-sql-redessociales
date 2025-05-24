@@ -18,13 +18,14 @@ CREATE TABLE platform_use (
     platform_id INT NOT NULL,
     student_id INT NOT NULL, 
     avg_use FLOAT, 
+    sleep_time int,
     mental_score INT,
     addicted_score INT,
     PRIMARY KEY (student_id, platform_id),
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     FOREIGN KEY (platform_id) REFERENCES social_media(platform_id)
     );
-    
+
 CREATE TABLE academic_level (
 	level_id INT Primary key not null,
     academic_level varchar(25)
@@ -52,4 +53,3 @@ CREATE TABLE marital_student (
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     FOREIGN KEY (marital_id) REFERENCES marital_status(marital_id)
     );
-    

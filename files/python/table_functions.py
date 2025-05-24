@@ -94,7 +94,7 @@ def table_academic_level(df):
 
     # Crear tabla sin duplicados con IDs
     academic_ref_df = pd.DataFrame({
-        'academic_id': range(1, len(unique_academic_levels) + 1),
+        'level_id': range(1, len(unique_academic_levels) + 1),
         'academic_level': unique_academic_levels
     })
 
@@ -114,6 +114,6 @@ def table_student_academic(df):
     df_merged = df.merge(academic_ref_df, left_on='academic_level', right_on='academic_level', how='left')
 
     # Nos quedamos solo con las columnas necesarias
-    student_academic_df = df_merged[['student_id', 'academic_id','affects']]
+    student_academic_df = df_merged[['student_id', 'level_id','affects']]
 
     return student_academic_df.reset_index(drop=True)
