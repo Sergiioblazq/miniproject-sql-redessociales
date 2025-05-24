@@ -1,4 +1,6 @@
 **Social Media Addiction Among Students**
+
+
 **Objective 🎯**
 Our goal is to analyze the factors influencing social media addiction among students through data collection and analysis. Using survey responses, social media usage statistics, and academic performance records, we aim to provide a data-driven understanding of how addiction affects student life.
 
